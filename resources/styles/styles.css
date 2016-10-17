@@ -1,0 +1,12 @@
+body {
+  background-color: grey;
+  color: white;
+}
+
+h1 {
+  color: orange;
+}
+
+.well {
+  background-color: darkgrey;
+}
