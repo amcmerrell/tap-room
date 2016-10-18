@@ -12,12 +12,13 @@ import { Keg } from './keg.model';
       <keg-list
         [childKegList]="masterKegList"
         (clickSender)="setSelectedKeg($event)"
+        (addSender)="showAddForm()"
       ></keg-list>
       <edit-keg
         [childSelectedKeg]="selectedKeg"
         (doneClickedSender)="finishedEditing()"
       ></edit-keg>
-      <new-keg
+      <new-keg *ngIf="newKegFormShowing"
         (newKegSender)="addKeg($event)"
       ></new-keg>
       </div>
@@ -30,18 +31,27 @@ export class AppComponent {
     new Keg("PBR", "Classic and cheap.", "3%", 4),
     new Keg("Rogue", "Portland-made", "6%", 6),
     new Keg("Deschutes", "Another portland beer", "5%", 7),
+    new Keg("Big Rig", "Notes of citrus and caramel.", "6%", 9),
+
   ];
+  newKegFormShowing: boolean = false;
   selectedKeg: Keg = null;
   setSelectedKeg(clickedKeg: Keg) {
-    console.log(clickedKeg);
+    console.log(this.masterKegList);
     this.selectedKeg = clickedKeg;
   }
 
   addKeg(newKegFromChild: Keg) {
     this.masterKegList.push(newKegFromChild);
+    this.newKegFormShowing = false;
   }
 
   finishedEditing() {
     this.selectedKeg = null;
   }
+
+  showAddForm(){
+    this.newKegFormShowing = true;
+  }
+
 }

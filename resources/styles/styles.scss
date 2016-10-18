@@ -1,11 +1,18 @@
-$background : gray;
+$background : #808080;
 $form-background : DarkGray;
+$title-background : SlateGray;
 body {
-  background-color: $background;
+  // background-color: $background;
+  background: url(http://www.craftsondraft.com/wp-content/uploads/2014/12/San-Diego-Brewery-Tour-Beer-Background10.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   color: white;
   #title-well{
     margin-top: 20px;
     text-align: center;
+    background-color: $title-background;
     h1 {
       color: orange;
       margin: 0px;
@@ -14,9 +21,17 @@ body {
   }
 
   .well {
-    background-color: $background;
+    background-color: rgba( $background, .8 );
     .form-well{
       background-color: $form-background;
+    }
+  }
+
+  .row {
+    #add-keg-box {
+      .well{
+        text-align: center;
+      }
     }
   }
 

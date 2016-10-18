@@ -23,7 +23,7 @@ import { Keg } from './keg.model';
       <input class="form-control" #newKegPrice>
     </div>
     <div>
-      <button class="btn btn-warning" (click)="
+      <button class="btn btn-success" (click)="
 
         addClicked(newKegName.value, newKegDescription.value, newKegAlcohol.value, newKegPrice.value);
         newKegName.value = '';
