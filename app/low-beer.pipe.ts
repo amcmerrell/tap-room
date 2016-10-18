@@ -3,7 +3,7 @@ import { Keg } from './keg.model';
 
 @Pipe({
   name: "lowbeer",
-  pure: true
+  pure: false
 })
 
 export class LowBeerPipe implements PipeTransform {
